@@ -1,5 +1,6 @@
 import pyautogui
 import time
+import pandas as pd
 
 # Prcipais comandos do PyAutoGUI
 # pyautogui.position() -> retorna a posição do mouse
@@ -46,3 +47,10 @@ pyautogui.write('teste')
 
 # Clicar no botão entrar
 pyautogui.click(x=-651, y=434)
+
+# Aguardar 5 segundos
+time.sleep(5)
+
+# Importar a base de dados
+tabela = pd.read_csv('produtos.csv', sep=';')
+print(tabela)
