@@ -52,5 +52,48 @@ pyautogui.click(x=-651, y=434)
 time.sleep(5)
 
 # Importar a base de dados
-tabela = pd.read_csv('produtos.csv', sep=';')
+tabela = pd.read_csv('produtos.csv')
 print(tabela)
+
+# Percorrer a base de dados
+for linha in tabela.index:
+    pyautogui.click(x=-816, y=210)
+    # Código
+    codigo = tabela.loc[linha, "codigo"]
+    pyautogui.write(codigo)
+    pyautogui.press("tab")
+    
+    # Marca
+    marca = tabela.loc[linha, "marca"]
+    pyautogui.write(marca)
+    pyautogui.press("tab")
+    
+    # Tipo
+    tipo = tabela.loc[linha, "tipo"]
+    pyautogui.write(tipo)
+    pyautogui.press("tab")
+    
+    # Categoria
+    categoria = tabela.loc[linha, "categoria"]
+    pyautogui.write(str(categoria))
+    pyautogui.press("tab")
+    
+    # Preço
+    preco = tabela.loc[linha, "preco_unitario"]
+    pyautogui.write(str(preco))
+    pyautogui.press("tab")
+    
+    # Custo
+    custo = tabela.loc[linha, "custo"]
+    pyautogui.write(str(custo))
+    pyautogui.press("tab")
+    
+    # Observações
+    obs = tabela.loc[linha, "obs"]
+    if not pd.isna(obs):
+        pyautogui.write(obs)
+
+    # Clicar no botão salvar
+    pyautogui.press("tab")
+    pyautogui.press("enter")
+    
