@@ -18,6 +18,7 @@ pandas==2.1.4
 parso==0.8.3
 pexpect==4.9.0
 platformdirs==4.1.0
+plotly==5.18.0
 prompt-toolkit==3.0.43
 psutil==5.9.7
 ptyprocess==0.7.0
@@ -28,6 +29,7 @@ pytz==2023.3.post1
 pyzmq==25.1.2
 six==1.16.0
 stack-data==0.6.3
+tenacity==8.2.3
 tornado==6.4
 traitlets==5.14.1
 tzdata==2023.4
