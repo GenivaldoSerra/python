@@ -5,8 +5,8 @@ from datetime import date
 
 
 class Todo(models.Model):
-    title = models.CharField(max_length=100, null=False, blank=False)
-    description = models.TextField(max_length=500, null=False, blank=False)
+    title = models.CharField(verbose_name="Titulo", max_length=100, null=False, blank=False)
+    description = models.TextField(verbose_name="Descrição", max_length=500, null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    deadline = models.DateField(null=False, blank=False)
+    deadline = models.DateField(verbose_name="Data de Entrega", null=False, blank=False)
     finished_at = models.DateField(null=True, blank=True)
