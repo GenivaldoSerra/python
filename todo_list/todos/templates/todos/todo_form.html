@@ -3,15 +3,22 @@
 {% load crispy_forms_tags %}
 
 {% block page_title %}
+  {% if todo.pk %}
+    Editar Tarefa
+  {% else %}
     Nova Tarefa
+  {% endif %}
 {% endblock page_title %}
 
 {% block content %}
-  <h1>Nova Tarefa</h1>
+  {% if todo.pk %}
+    <h1>Editar Tarefa</h1>
+  {% else %}
+    <h1>Nova Tarefa</h1>
+  {% endif %}
           
   <form method="POST">
       {% csrf_token %}
-      {% comment %} {{ form }} {% endcomment %}
       {{ form|crispy }}
 
       <button type="submit" class="btn btn-primary">Salvar</button>
